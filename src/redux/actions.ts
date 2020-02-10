@@ -1,20 +1,21 @@
-import { Todo } from '../types'
+import { Todo, AppActions } from '../types'
+import {
+    ADD_TODO,
+    TOGGLE_TODO,
+    REMOVE_TODO,
+} from '../types/actions'
 
-export const ADD_TODO = 'ADD_TODO'
-export const TOGGLE_TODO = 'TOGGLE_TODO'
-export const REMOVE_TODO = 'REMOVE_TODO'
-
-export const addTodoAction = (todo: Todo) => ({
+export const addTodoAction = (todo: Todo): AppActions => ({
     type: ADD_TODO,
-    payload: todo
+    todo: todo
 })
 
-export const toggleTodoAction = (id: number) => ({
+export const toggleTodoAction = (id: string): AppActions => ({
     type: TOGGLE_TODO,
-    payload: id
+    id: id
 })
 
-export const removeTodoAction = (id: number) => ({
+export const removeTodoAction = (id: string): AppActions => ({
     type: REMOVE_TODO,
-    payload: id
+    id: id
 })

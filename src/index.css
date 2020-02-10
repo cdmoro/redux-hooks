@@ -12,7 +12,52 @@ code {
     monospace;
 }
 
-.todo.completed {
+.App {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form.todo-input {
+  display: flex;
+}
+
+form input {
+  flex: 1 1 100%;
+}
+
+form button {
+  flex: 1 3 100%;
+  border: none;
+  background: lightsteelblue;
+  border-radius: .25rem;
+}
+
+.todo-list {
+  padding: 0;
+}
+
+.todo {
+  display: flex;
+  margin: .25rem 0;
+}
+
+.todo:nth-child(2n) {
+  background: #EEE;
+}
+
+.todo label {
+  flex: 1 1 100%;
+}
+
+.todo label.completed {
   text-decoration: line-through;
   color: gray;
+}
+
+.todo button {
+  background: tomato;
+  border: none;
+  border-radius: .25rem;
+  color: #FFF;
+  font-weight: bold;
 }

@@ -1,14 +1,14 @@
+import { TodoActionTypes } from "./actions";
+
 export interface Store {
     todos: Todo[]
 }
 
 export interface Todo {
-    id: number,
+    id: string,
     label: string,
     completed: boolean
 }
 
-export interface Action {
-    type: string,
-    payload?: any
-}
+// AppActions
+export type AppActions = TodoActionTypes

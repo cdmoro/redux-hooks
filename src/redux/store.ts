@@ -1,21 +1,24 @@
 import { createStore } from 'redux'
 import { appReducer } from './reducer'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import uuid from 'uuid'
 
 const initialState = {
     todos: [
         {
-            id: 1,
+            id: uuid(),
             label: 'Go to the gym',
             completed: false
         },
         {
-            id: 2,
+            id: uuid(),
             label: 'Learn redux!',
             completed: false
         }
     ]
 }
+
+export type AppState = ReturnType<typeof appReducer>
 
 export const store = createStore(
     // @ts-ignore

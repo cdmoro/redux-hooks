@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addTodoAction } from '../redux'
-import { Store } from '../types'
+import uuid from 'uuid'
 
 function TodoInput() {
     const [todoValue, setTodoValue] = useState('')
-    const todosLenght = useSelector((store: Store) => store.todos.length)
     const dispatch = useDispatch()
 
     const handleSubmit = (
@@ -16,7 +15,7 @@ function TodoInput() {
       if (todoValue.length > 0) {
         dispatch(
           addTodoAction({
-            id: todosLenght + 1,
+            id: uuid(),
             label: todoValue,
             completed: false
           })
