@@ -5,7 +5,7 @@ import { Todo } from '../redux/todo/types';
 import { AppState } from '../redux'
 
 function TodoList() {
-    const todos = useSelector((state: AppState) => state.todo.todos)
+    const todos = useSelector(({ todo: { todos } }: AppState) => todos)
     const dispatch = useDispatch();
     const removeTodo = (id: string) => dispatch(removeTodoAction(id))
     const toggleTodo = (id: string) => dispatch(toggleTodoAction(id))
