@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList'
 import TodoInput from './components/TodoInput'
-import CompletedTodo from './components/CompletedTodo';
+import CompletedTodos from './components/CompletedTodos';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <h2>TODO LIST</h2>
       <TodoInput />
       <TodoList />
-      <CompletedTodo />
+      <CompletedTodos />
     </div>
   )
 }
