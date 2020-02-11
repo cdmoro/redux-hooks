@@ -1,15 +1,14 @@
-import { userStore } from "./types";
-
 import { 
-    SET_USER,
-    SetUserAction
- } from './types'
+    userStore, 
+    UserActionTypes,
+    SET_USER
+} from "./types";
 
  const initialState: userStore = {
     name: ''
  }
 
-export const userReducer = (state: userStore = initialState, action: SetUserAction): userStore => {
+export const userReducer = (state: userStore = initialState, action: UserActionTypes): userStore => {
     switch(action.type) {
         case SET_USER:
             return {
