@@ -1,13 +1,29 @@
-import { Store, Todo } from '../types'
+import { todoStore, Todo } from './types'
+import uuid from 'uuid'
 
 import {
     ADD_TODO,
     TOGGLE_TODO,
     REMOVE_TODO,
     TodoActionTypes
-} from '../types/actions'
+} from './types'
 
-export const appReducer = (state: Store, action: TodoActionTypes): Store => {
+const initialState: todoStore = {
+    todos: [
+        {
+            id: uuid(),
+            label: 'Go to the gym',
+            completed: false
+        },
+        {
+            id: uuid(),
+            label: 'Learn redux!',
+            completed: false
+        }
+    ]
+}
+
+export const todoReducer = (state: todoStore = initialState, action: TodoActionTypes): todoStore => {
     switch(action.type) {
         case ADD_TODO:
             return {

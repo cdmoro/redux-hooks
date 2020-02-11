@@ -61,3 +61,18 @@ form button {
   color: #FFF;
   font-weight: bold;
 }
+
+.todo-completed {
+  margin: .25rem 0;
+}
+
+.todo-completed .icon {
+  background: limegreen;
+  color: #FFF;
+  border-radius: 100%;
+  width: 22px;
+  margin-right: .3rem;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.2rem;
+}

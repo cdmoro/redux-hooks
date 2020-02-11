@@ -1,8 +1,16 @@
-import { Todo } from "."
-
 export const ADD_TODO = 'ADD_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
+
+export interface todoStore {
+    todos: Todo[]
+}
+
+export interface Todo {
+    id: string,
+    label: string,
+    completed: boolean
+}
 
 export interface AddTodoAction {
     type: typeof ADD_TODO,
