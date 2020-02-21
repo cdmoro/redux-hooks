@@ -1,12 +1,12 @@
+import { IUser } from "../../interfaces/user.interface"
+
 export const SET_USER = 'SET_USER'
 
-export interface userStore {
-    name: string
-}
+export type userStore = IUser
 
 export interface SetUserAction {
     type: typeof SET_USER,
-    name: string
+    user: IUser
 }
 
 // TodoActions only

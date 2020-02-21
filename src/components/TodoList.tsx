@@ -5,10 +5,8 @@ import { Todo } from '../redux/todo/types';
 import { AppState } from '../redux'
 
 function TodoList() {
-    const todos = useSelector(({ todo: { todos } }: AppState) => todos)
+    const todos = useSelector(({ todo }: AppState) => todo.todos)
     const dispatch = useDispatch();
-    const removeTodo = (id: string) => dispatch(removeTodoAction(id))
-    const toggleTodo = (id: string) => dispatch(toggleTodoAction(id))
 
     return (
         <ul className="todo-list">
@@ -16,10 +14,10 @@ function TodoList() {
                 todos.map(({id, label, completed}: Todo) => 
                     <li key={id} className="todo">
                         <label className={completed ? 'completed': ''}>
-                            <input type="checkbox" checked={completed} onChange={() => toggleTodo(id)}/>
+                            <input type="checkbox" checked={completed} onChange={() => dispatch(toggleTodoAction(id))}/>
                             {label}
                         </label>
-                        <button onClick={() => removeTodo(id)}>X</button>
+                        <button onClick={() => dispatch(removeTodoAction(id))}>X</button>
                     </li>
                 )
             }
