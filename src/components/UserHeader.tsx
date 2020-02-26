@@ -1,28 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { IUser } from '../interfaces/user.interface';
-import { setUserAction, AppState } from '../redux';
+import { AppState, fetchUserAction } from '../redux';
 
 function UserHeader() {
     const dispatch = useDispatch();
     const user = useSelector(({ user }: AppState) => user)
 
     useEffect(() => {
-        const fetchUser = async () => {
-            const response = await fetch('https://rickandmortyapi.com/api/character/1')
-            const data = await response.json()
-
-            const user: IUser = {
-                name: data.name,
-                status: data.status,
-                image: data.image,
-                location: data.location.name
-            }
-
-            dispatch(setUserAction(user))
-        }
-
-        fetchUser()
+        dispatch(fetchUserAction())
     }, [dispatch])
     
     return (
